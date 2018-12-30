@@ -23,5 +23,6 @@ To set in how much time the animation have to take you can set the data-twr-dura
 </script>
 ```
 
-**It does *not* work with tags, use only with text
-by the way you can use the <br> tag**
+**It does *not* work with tags.
+Use only with text.
+By the way, support for the \<br> tag has been added, but now it doesn't work with \<pre> (could be solved in future)**
