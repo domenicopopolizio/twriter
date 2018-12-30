@@ -22,3 +22,6 @@ To set in how much time the animation have to take you can set the data-twr-dura
   paragraph.start();
 </script>
 ```
+
+**It does *not* work with tags, use only with text
+by the way you can use the <br> tag**
