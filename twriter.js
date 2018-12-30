@@ -2,7 +2,7 @@ class TWriter {
     constructor(element) {
         this.element = element;
         this.duration = parseInt(element.dataset.twrDuration) || 2000;
-        this.txt = element.innerHTML;
+        this.txt = element.innerHTML.replace(/\n/g, '').replace(/<br[^>]*>/gi, '\n');
         this.written = 0;
         this.timePerLetter = Math.floor(this.duration/this.txt.length);
         element.innerHTML = '';
@@ -19,7 +19,11 @@ class TWriter {
                 if (this.written >= this.txt.length) {
                     reject();
                 } else {
-                    this.element.innerHTML += this.txt[this.written++];
+                    let letter = this.txt[this.written++];
+                    if(letter == '\n') {
+                        letter = '<br>'
+                    }
+                    this.element.innerHTML += letter;
                     resolve();
                 }
             }, this.timePerLetter);
